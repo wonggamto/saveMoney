@@ -1,65 +1,8 @@
 <template>
-    <div class="nav-wrapper">
-        <div class="content">
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-            <p>Money.vue</p>
-        </div>
-        <Nav/>
+    <div>
+        <Layout>
+        <p>首页</p>
+        </Layout>
     </div>
 </template>
 <script lang="ts">
@@ -68,17 +11,3 @@
   };
 </script>
 
-<style lang="scss" scoped>
-    .nav-wrapper {
-        border: 1px solid blue;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
-
-    .content {
-        border: 1px solid black;
-        overflow: auto;
-        flex-grow: 1;
-    }
-</style>
