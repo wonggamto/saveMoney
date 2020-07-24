@@ -4,7 +4,7 @@
             <NumberPad />
             <Types/>
             <Notes/>
-            <Tags :data-source="tags"/>
+            <Tags :data-source.sync="tags"/>
         </Layout>
     </div>
 </template>
@@ -26,7 +26,7 @@
 <style lang="scss">
 
     .layout-content {
-        border: 1px solid red;
+        /*border: 1px solid red;*/
         display: flex;
         flex-direction: column-reverse;
     }
