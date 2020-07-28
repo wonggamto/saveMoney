@@ -1,15 +1,17 @@
 <template>
     <div>
         <Layout>
-            <ol class="tags">
-                <li v-for="tag in tags" :key="tag.id">
+            <div class="tags">
+                <router-link class="tag"
+                             v-for="tag in tags" :key="tag.id"
+                             :to="`/labels/edit/${tag.id}`">
                     <span>{{tag.name}}</span>
                     <Icon name="right"/>
-                </li>
-            </ol>
-            <div class="createTags-wrapper">
-                <button class="createTags" @click="createTag">新建标签</button>
+                </router-link>
             </div>
+                <div class="createTags-wrapper">
+                    <button class="createTags" @click="createTag">新建标签</button>
+                </div>
         </Layout>
     </div>
 </template>
@@ -26,15 +28,15 @@
 
     createTag() {
       const name = window.prompt('请输入标签名');
-      if(name){
+      if (name) {
         const message = tagListModel.create(name);
-        if(message === 'duplicated'){
-          window.alert('标签名重复，请重新输入！')
-        }else if(message === 'success'){
-          window.alert('添加成功！')
+        if (message === 'duplicated') {
+          window.alert('标签名重复，请重新输入！');
+        } else if (message === 'success') {
+          window.alert('添加成功！');
         }
-      }else if(!name){
-        window.alert('标签名不能为空！')
+      } else if (!name) {
+        window.alert('标签名不能为空！');
       }
     }
   };
@@ -44,7 +46,8 @@
         background: white;
         font-size: 16px;
         padding-left: 16px;
-        > li {
+
+        > .tag {
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -67,6 +70,7 @@
         border: none;
         height: 40px;
         padding: 0 16px;
+
         &-wrapper {
             text-align: center;
             padding: 14px;
