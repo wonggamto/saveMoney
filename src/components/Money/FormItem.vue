@@ -2,7 +2,8 @@
     <label class="formItem">
         <span class="name">{{this.fielName}}</span>
         <input type="text"
-               v-model="value"
+               :value="value"
+               @input="onValueChanged($event.target.value)"
                :placeholder="this.placeholder">
     </label>
 </template>
@@ -15,7 +16,7 @@
   export default class FormItem extends Vue {
     @Prop({required: true}) fielName!: string;
     @Prop() placeholder?: string;
-    @Prop({default: ''}) value!: string;
+    @Prop({default: ''}) readonly value!: string;
 
     @Watch('value')
     onValueChanged(value: string) {
