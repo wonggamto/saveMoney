@@ -1,6 +1,6 @@
 <template>
     <label class="formItem">
-        <span class="name">{{this.fielName}}</span>
+        <span class="name">{{this.fieldName}}</span>
         <input type="text"
                :value="value"
                @input="onValueChanged($event.target.value)"
@@ -14,7 +14,7 @@
 
   @Component
   export default class FormItem extends Vue {
-    @Prop({required: true}) fielName!: string;
+    @Prop({required: true}) fieldName!: string;
     @Prop() placeholder?: string;
     @Prop({default: ''}) readonly value!: string;
 

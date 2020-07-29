@@ -5,7 +5,7 @@
             <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"/>
             <Types :value.sync="record.type"/>
             <div class="notes">
-                <FormItem fiel-name="备注"
+                <FormItem field-name="备注"
                           @update:value="onUpdateNotes"
                           placeholder="在这里输入备注"/>
             </div>
