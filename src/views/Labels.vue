@@ -9,9 +9,9 @@
                     <Icon name="right"/>
                 </router-link>
             </div>
-                <div class="createTags-wrapper">
-                    <Button class="createTags" @click="createTag">新建标签</Button>
-                </div>
+            <div class="createTags-wrapper">
+                <Button class="createTags" @click="createTag">新建标签</Button>
+            </div>
         </Layout>
     </div>
 </template>
@@ -32,14 +32,7 @@
     createTag() {
       const name = window.prompt('请输入标签名');
       if (name) {
-        const message = tagListModel.create(name);
-        if (message === 'duplicated') {
-          window.alert('标签名重复，请重新输入！');
-        } else if (message === 'success') {
-          window.alert('添加成功！');
-        }
-      } else if (!name) {
-        window.alert('标签名不能为空！');
+        window.createTag(name);
       }
     }
   };
