@@ -8,8 +8,8 @@
                           @update:value="onUpdateNotes"
                           placeholder="在这里输入备注"/>
             </div>
-
             <Tags/>
+            {{count}} <button @click="add">+1</button>
         </Layout>
     </div>
 </template>
@@ -26,9 +26,18 @@
   const version = window.localStorage.getItem('version') || '0';
 
   @Component({
+    computed:{
+      count(){
+        return store.count;
+      }
+    },
     components: {FormItem, Tags, Types, NumberPad}
   })
   export default class Money extends Vue {
+
+    add(){
+        store.addCount();
+    }
     recordList = store.recordList;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
