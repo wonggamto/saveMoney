@@ -5,7 +5,7 @@ const tagStore = {
   //tag store
   tagList: [] as Tag[],
   fetchTags() {
-    tagStore.tagList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
+    this.tagList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
     return this.tagList;
   },
   createTag(name: string) {
@@ -52,7 +52,7 @@ const tagStore = {
     return this.tagList.filter(t => t.id === id)[0];
   },
   saveTags() {
-    window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.tagList));
+    window.localStorage.setItem('tagList', JSON.stringify(this.tagList));
   },
 };
 tagStore.fetchTags();
