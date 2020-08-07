@@ -9,7 +9,7 @@
                           placeholder="在这里输入备注"/>
             </div>
             <Tags/>
-            {{count}} <button @click="add">+1</button>
+
         </Layout>
     </div>
 </template>
@@ -20,29 +20,26 @@
   import Tags from '@/components/Money/Tags.vue';
   import {Component} from 'vue-property-decorator';
   import FormItem from '@/components/Money/FormItem.vue';
-  import store from '@/store/index2';
-  // import model from '@/model.js';
-  // const {model}= require('@/model.js');
+  import Button from '@/components/Button.vue';
+
   const version = window.localStorage.getItem('version') || '0';
 
   @Component({
-    computed:{
-      count(){
-        return store.count;
+    computed: {
+      recordList() {
+        return this.$store.state.recordList;
       }
+
     },
-    components: {FormItem, Tags, Types, NumberPad}
+    components: {Button, FormItem, Tags, Types, NumberPad}
   })
   export default class Money extends Vue {
-
-    add(){
-        store.addCount();
-    }
-    recordList = store.recordList;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
-
+    created(){
+      this.$store.commit('fetchRecords')
+    }
 
     onUpdateNotes(value: string) {
       this.record.notes = value;
@@ -53,8 +50,9 @@
     }
 
     saveRecord() {
-      store.createRecord(this.record);
+      this.$store.commit('createRecord', this.record);
     }
+
 
   }
 </script>
