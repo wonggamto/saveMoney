@@ -25,20 +25,19 @@
   const version = window.localStorage.getItem('version') || '0';
 
   @Component({
-    computed: {
-      recordList() {
-        return this.$store.state.recordList;
-      }
-
-    },
     components: {Button, FormItem, Tags, Types, NumberPad}
   })
   export default class Money extends Vue {
+    get recordList() {
+      return this.$store.state.recordList;
+    }
+
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
-    created(){
-      this.$store.commit('fetchRecords')
+
+    created() {
+      this.$store.commit('fetchRecords');
     }
 
     onUpdateNotes(value: string) {
